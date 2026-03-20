@@ -144,7 +144,7 @@ ML                   XGBoost · LightGBM · CatBoost · PyTorch · scikit-learn 
 NLP                  FinBERT · VADER · HuggingFace Transformers · RAG · SHAP
 Federated Learning   Flower (flwr) · FedAvg · FedProx · FedNova · Opacus (DP)
 Data at Scale        HMDA 42M · BRFSS 1.28M · NHANES · 17,773 stock-days · 14,584 transcripts
-Languages            Python · R · SQL
+Languages            Python · R · SQL.
 ```
 
 ---
