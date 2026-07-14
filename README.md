@@ -16,7 +16,7 @@
 
 [![Email](https://img.shields.io/badge/Email-rajveerpall04@gmail.com-19376d?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajveerpall04@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rajveer--singh--pall-19376d?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajveer-singh-pall)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0001--6763--6124-19376d?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0001-6763-6124)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0001--6762--6134-19376d?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0001-6762-6134)
 [![Profile Views](https://komarev.com/ghpvc/?username=Rajveer-code&style=for-the-badge&color=576cbc&label=PROFILE+VIEWS)](https://github.com/Rajveer-code)
 
 </div>
