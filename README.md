@@ -132,7 +132,11 @@ Languages            Python · R · SQL
 
 ### &#128013;&nbsp; Contribution Graph
 
-<img src="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-contribution-grid-snake-dark.svg" alt="snake animation"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake.svg" />
+  <img alt="snake animation" src="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
+</picture>
 
 <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Rajveer-code&bg_color=0d1117&color=22d3ee&line=fbbf24&point=fb7185&area=true&hide_border=true&custom_title=Contribution%20Activity" alt="activity graph"/>
 
