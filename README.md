@@ -12,6 +12,8 @@
 **B.Tech Computer Science &amp; Business Systems** · Gyan Ganga Institute of Technology and Sciences, Jabalpur, India
 *MSc / MS Applicant 2027*
 
+<a href="https://rajveer-code-github-io.vercel.app/"><img src="https://img.shields.io/badge/🌐_PORTFOLIO-rajveer--code.vercel.app-0b2447?style=for-the-badge&labelColor=576cbc" alt="Portfolio"/></a>
+
 [![Email](https://img.shields.io/badge/Email-rajveerpall04@gmail.com-19376d?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajveerpall04@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rajveer--singh--pall-19376d?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajveer-singh-pall)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0001--6763--6124-19376d?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0001-6763-6124)
