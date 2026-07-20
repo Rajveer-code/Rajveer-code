@@ -5,3 +5,7 @@ _preview.html
 _preview_ascii.png
 source-prepped.png
 .ruff_cache/
+_ref-*
+_cmp.html
+_check.png
+__pycache__/

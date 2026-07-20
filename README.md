@@ -28,8 +28,8 @@
 
 <table>
   <tr>
-    <td valign="top"><img src="./avatar-ascii.svg" width="340" alt="ascii self-portrait"/></td>
-    <td valign="top"><img src="./info-card.svg" width="500" alt="neofetch info card"/></td>
+    <td valign="top"><img src="./avatar-ascii.svg" width="370" alt="ascii self-portrait"/></td>
+    <td valign="top"><img src="./info-card.svg" width="490" alt="neofetch info card"/></td>
   </tr>
 </table>
 
@@ -148,7 +148,7 @@ Languages            Python · R · SQL
 
 <h4><code>rajveer@github ~ $ ./contributions.sh</code></h4>
 
-<img width="840" src="./contrib-heatmap.svg" alt="self-hosted contribution heatmap — refreshed daily via GitHub Actions"/>
+<img width="860" src="./contrib-heatmap.svg" alt="self-hosted contribution heatmap — refreshed daily via GitHub Actions"/>
 
 <br/><br/>
 

@@ -1,44 +1,50 @@
 #!/usr/bin/env python3
-"""Turn a portrait photo into a self-typing, monochrome ASCII-art SVG.
+"""Portrait photo -> self-typing monochrome ASCII art inside a terminal window.
 
-One script on purpose: prep (crop, denoise, CLAHE local-contrast) and convert
-(brightness -> glyph ramp -> animated SVG) live together. No rembg / background
-removal is needed here because the source already sits on a near-black studio
-backdrop: dark pixels map to spaces and simply fall away on a dark README.
+Prep (crop, denoise, CLAHE local-contrast) and convert (brightness -> glyph
+ramp -> animated SVG) live in one script. No rembg/background removal: the
+source sits on a near-black studio backdrop, so dark pixels map to spaces and
+fall away. The art is wrapped in a rounded terminal window (title bar with
+traffic-light dots + a whoami footer) and each row wipes in left-to-right.
 
 Run:  python scripts/make_ascii_svg.py
-Env:  STATIC=1  ->  emit a frozen (non-animated) frame for local previews.
+Env:  STATIC=1  ->  frozen (non-animated) frame for local previews.
 """
 import os
 import cv2
 import numpy as np
 
-# ---- tunables -------------------------------------------------------------
-SRC   = "source-photo.jpg"
-OUT   = "avatar-ascii.svg"
+# ---- content --------------------------------------------------------------
+SRC        = "source-photo.jpg"
+OUT        = "avatar-ascii.svg"
+TITLE      = "rajveer@github: ~$ ./portrait.sh"
+WHOAMI     = "rajveer@github:~$ whoami "
+NAME       = "Rajveer Singh Pall"
 
-# crop as fractions of (w, h): head + a hint of shoulders so the face carries
-# the portrait instead of the busy dark suit.
-CROP  = (0.29, 0.14, 0.73, 0.40)   # left, top, right, bottom
-
-COLS  = 58                          # character columns
-CELL_ASPECT = 0.52                  # glyph height:width, sets the row count
-
+# ---- portrait tunables ----------------------------------------------------
+CROP  = (0.29, 0.14, 0.73, 0.40)   # left, top, right, bottom (head + shoulders)
+COLS  = 100                         # character columns (reference density)
+CELL_ASPECT = 0.50                  # glyph height:width, sets the row count
 RAW_BG_CUTOFF = 34                  # raw gray below this -> blank (kills backdrop)
-BILATERAL     = (7, 55, 55)         # d, sigmaColor, sigmaSpace (flatten suit texture)
+BILATERAL     = (7, 55, 55)         # d, sigmaColor, sigmaSpace
 CLAHE_CLIP    = 1.6
 CLAHE_TILE    = (8, 8)
-GAMMA         = 1.15                # <1 lifts midtones, >1 deepens shadows
+GAMMA         = 1.15
+RAMP = " .`:-=+*cs#%@"              # sparse -> dense (dense = brightest on dark)
 
-RAMP = " .`:-=+*cs#%@"              # sparse -> dense  (dense = brightest on dark bg)
-
-FONT_SIZE = 12
-CHAR_W    = 7.05                    # monospace advance at FONT_SIZE
-LINE_H    = 12.6
-COLOR     = "#b9c7d6"              # cool light gray
-CURSOR    = "#22d3ee"              # cyan typing cursor
-STEP      = 0.026                   # per-row start stagger (s)
-DUR       = 0.42                    # per-row wipe duration (s)
+# ---- window / layout (mirrors the reference terminal card) ----------------
+W        = 840
+PAD_X    = 20
+ART_W    = 800                      # text stretched to this via textLength
+BAR_H    = 30
+FS       = 12.9
+ROW_H    = 15
+INK      = "#c9d1d9"
+BG0, BG1 = "#111722", "#0d1117"
+BORDER   = "#30363d"
+DOTS     = ["#ff5f56", "#ffbd2e", "#27c93f"]
+DIM      = "#7d8590"
+STEP     = 0.11                     # per-row stagger + wipe duration (s)
 # ---------------------------------------------------------------------------
 
 
@@ -53,8 +59,6 @@ def build_grid():
     ch, cw = img.shape
     rows = max(1, int(round(COLS * (ch / cw) * CELL_ASPECT)))
 
-    # bilateral: flatten suit/backdrop texture while keeping face + glasses
-    # edges, so CLAHE sharpens structure instead of amplifying JPEG speckle.
     d, sc, ss = BILATERAL
     smooth = cv2.bilateralFilter(img, d, sc, ss)
     clahe = cv2.createCLAHE(clipLimit=CLAHE_CLIP, tileGridSize=CLAHE_TILE).apply(smooth)
@@ -68,20 +72,19 @@ def build_grid():
     grid = [[" " if raw_small[y, x] < RAW_BG_CUTOFF else RAMP[idx[y, x]]
              for x in range(COLS)] for y in range(rows)]
 
-    # despeckle: drop isolated glyphs (fewer than 2 inked 8-neighbours) so the
-    # silhouette stays clean instead of dusted with stray characters.
+    # despeckle: drop isolated glyphs (< 2 inked 8-neighbours)
     def inked(y, x):
         return 0 <= y < rows and 0 <= x < COLS and grid[y][x] != " "
     cleaned = [row[:] for row in grid]
     for y in range(rows):
         for x in range(COLS):
-            if grid[y][x] == " ":
-                continue
-            n = sum(inked(y + dy, x + dx)
-                    for dy in (-1, 0, 1) for dx in (-1, 0, 1) if (dy or dx))
-            if n < 2:
-                cleaned[y][x] = " "
-    return ["".join(row).rstrip() for row in cleaned]
+            if grid[y][x] != " ":
+                n = sum(inked(y + dy, x + dx)
+                        for dy in (-1, 0, 1) for dx in (-1, 0, 1) if (dy or dx))
+                if n < 2:
+                    cleaned[y][x] = " "
+    # keep full width (uniform textLength / wipe); spaces render as nothing
+    return ["".join(row) for row in cleaned]
 
 
 def esc(s):
@@ -90,46 +93,67 @@ def esc(s):
 
 def build_svg(lines, static=False):
     rows = len(lines)
-    W = round(COLS * CHAR_W, 1)
-    H = round(rows * LINE_H + 6, 1)
+    art_top = BAR_H + 7
+    H = art_top + rows * ROW_H + 45
+    foot_line = art_top + rows * ROW_H
+    foot_y = foot_line + 19
+
     out = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
-        f'width="{W}" height="{H}" role="img" aria-label="ASCII self-portrait">',
-        f'<style>text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'
-        f'"DejaVu Sans Mono",monospace;font-size:{FONT_SIZE}px;fill:{COLOR};'
-        f'font-weight:500;letter-spacing:0;}}</style>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
+        f'viewBox="0 0 {W} {H}" font-family="ui-monospace,SFMono-Regular,Menlo,'
+        f'Consolas,monospace" role="img" aria-label="ASCII self-portrait">',
+        f'<defs><linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0" stop-color="{BG0}"/>'
+        f'<stop offset="1" stop-color="{BG1}"/></linearGradient></defs>',
+        f'<rect width="{W}" height="{H}" rx="12" fill="url(#pbg)"/>',
+        f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="12" fill="none" '
+        f'stroke="{BORDER}"/>',
+        f'<line x1="0" y1="{BAR_H}" x2="{W}" y2="{BAR_H}" stroke="{BORDER}"/>',
     ]
-    defs, body = [], []
+    for i, col in enumerate(DOTS):
+        out.append(f'<circle cx="{20 + i*16}" cy="15" r="5" fill="{col}"/>')
+    out.append(
+        f'<text x="{W/2}" y="19" fill="{DIM}" font-size="12" '
+        f'text-anchor="middle">{esc(TITLE)}</text>')
+
     for i, line in enumerate(lines):
-        y = round((i + 1) * LINE_H, 1)
-        txt = esc(line) if line else ""
-        if static or not txt:
-            body.append(
-                f'<text x="0" y="{y}" xml:space="preserve">{txt}</text>')
+        base = round(art_top + i * ROW_H + FS * 0.86, 1)
+        clip_y = art_top + i * ROW_H
+        txt = esc(line)
+        if static:
+            out.append(
+                f'<text xml:space="preserve" x="{PAD_X}" y="{base}" fill="{INK}" '
+                f'font-size="{FS}" textLength="{ART_W}" lengthAdjust="spacing">'
+                f'{txt}</text>')
             continue
         begin = round(i * STEP, 3)
-        end = round(begin + DUR, 3)
-        cid = f"c{i}"
-        defs.append(
-            f'<clipPath id="{cid}"><rect x="0" y="{round(i*LINE_H,1)}" '
-            f'width="0" height="{LINE_H+3}"><animate attributeName="width" '
-            f'from="0" to="{W}" dur="{DUR}s" begin="{begin}s" '
-            f'fill="freeze"/></rect></clipPath>')
-        body.append(
-            f'<text x="0" y="{y}" xml:space="preserve" '
-            f'clip-path="url(#{cid})">{txt}</text>')
-        body.append(
-            f'<rect x="0" y="{round(i*LINE_H+2,1)}" width="{CHAR_W}" '
-            f'height="{FONT_SIZE}" fill="{CURSOR}" opacity="0">'
-            f'<animate attributeName="x" from="0" to="{W}" dur="{DUR}s" '
-            f'begin="{begin}s" fill="freeze"/>'
+        out.append(
+            f'<clipPath id="pr{i}"><rect x="{PAD_X}" y="{clip_y}" height="{ROW_H}" '
+            f'width="0"><animate attributeName="width" from="0" to="{ART_W}" '
+            f'begin="{begin}s" dur="{STEP}s" fill="freeze"/></rect></clipPath>'
+            f'<g clip-path="url(#pr{i})"><text xml:space="preserve" x="{PAD_X}" '
+            f'y="{base}" fill="{INK}" font-size="{FS}" textLength="{ART_W}" '
+            f'lengthAdjust="spacing">{txt}</text></g>'
+            f'<rect y="{clip_y + 1}" width="8" height="13" fill="{INK}" '
+            f'opacity="0"><animate attributeName="x" from="{PAD_X}" '
+            f'to="{PAD_X + ART_W}" begin="{begin}s" dur="{STEP}s" fill="freeze"/>'
             f'<set attributeName="opacity" to="0.85" begin="{begin}s"/>'
-            f'<set attributeName="opacity" to="0" begin="{end}s"/></rect>')
-    if defs:
-        out.append("<defs>" + "".join(defs) + "</defs>")
-    out.extend(body)
+            f'<set attributeName="opacity" to="0" begin="{round(begin+STEP,3)}s"/>'
+            f'</rect>')
+
+    # footer prompt + blinking cursor
+    cur_x = round(PAD_X + (len(WHOAMI) + len(NAME)) * 7.25, 0)
+    out.append(f'<line x1="0" y1="{foot_line}" x2="{W}" y2="{foot_line}" stroke="{BORDER}"/>')
+    out.append(
+        f'<text x="{PAD_X}" y="{foot_y}" fill="{DIM}" font-size="13">{esc(WHOAMI)}'
+        f'<tspan fill="{INK}">{esc(NAME)}</tspan></text>')
+    out.append(
+        f'<rect x="{cur_x}" y="{foot_y - 12}" width="8" height="14" fill="{INK}">'
+        f'<animate attributeName="opacity" values="1;1;0;0" '
+        f'keyTimes="0;0.5;0.51;1" dur="1s" repeatCount="indefinite"/></rect>')
+
     out.append("</svg>")
-    return "\n".join(out)
+    return "".join(out)
 
 
 def main():
