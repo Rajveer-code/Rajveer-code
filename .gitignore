@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+_preview.html
+_preview_ascii.png
+source-prepped.png
+.ruff_cache/

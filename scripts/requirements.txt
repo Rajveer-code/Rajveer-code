@@ -1,0 +1,9 @@
+# Daily workflow (fetch + render the contribution heatmap) needs only these:
+requests==2.32.3
+beautifulsoup4==4.12.3
+certifi>=2024.2.2
+
+# Portrait pipeline — run locally only when you change source-photo.jpg.
+# Uncomment before running scripts/make_ascii_svg.py:
+# opencv-python-headless>=4.9
+# numpy>=1.26

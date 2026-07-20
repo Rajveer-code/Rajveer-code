@@ -21,6 +21,20 @@
 
 </div>
 
+<!-- ── animated whoami: ASCII portrait + neofetch card ─────────────── -->
+<div align="center">
+
+<h3><code>rajveer@github ~ $ whoami</code></h3>
+
+<table>
+  <tr>
+    <td valign="top"><img src="./avatar-ascii.svg" width="340" alt="ascii self-portrait"/></td>
+    <td valign="top"><img src="./info-card.svg" width="500" alt="neofetch info card"/></td>
+  </tr>
+</table>
+
+</div>
+
 ---
 
 ## &#128218;&nbsp; Research
@@ -132,13 +146,17 @@ Languages            Python · R · SQL
 
 ### &#128013;&nbsp; Contribution Graph
 
+<h4><code>rajveer@github ~ $ ./contributions.sh</code></h4>
+
+<img width="840" src="./contrib-heatmap.svg" alt="self-hosted contribution heatmap — refreshed daily via GitHub Actions"/>
+
+<br/><br/>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake.svg" />
   <img alt="snake animation" src="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
 </picture>
-
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Rajveer-code&bg_color=0d1117&color=22d3ee&line=fbbf24&point=fb7185&area=true&hide_border=true&custom_title=Contribution%20Activity" alt="activity graph"/>
 
 <br/>
 
