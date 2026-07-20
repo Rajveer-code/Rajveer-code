@@ -5,10 +5,6 @@
 
 <div align="center">
 
-<a href="https://readme-typing-svg.demolab.com"><img src="https://readme-typing-svg.demolab.com/?lines=When+do+ML+systems+fail+the+people+they+serve%3F;External+validity+%3E+in-domain+accuracy.;Honest+negative+results+over+hype.&font=JetBrains+Mono&size=21&pause=1100&color=22D3EE&center=true&vCenter=true&width=640&height=46" alt="typing"/></a>
-
-<br/>
-
 **B.Tech Computer Science &amp; Business Systems** · Gyan Ganga Institute of Technology and Sciences, Jabalpur, India
 *MSc / MS Applicant 2027*
 
