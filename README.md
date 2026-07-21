@@ -7,6 +7,7 @@
 *MSc / MS Applicant 2027*
 
 <a href="https://rajveer-code-github-io.vercel.app/"><img src="https://img.shields.io/badge/🌐_PORTFOLIO-rajveer--code.vercel.app-ffffff?style=for-the-badge&labelColor=0b2447&color=14b8a6" alt="Portfolio"/></a>
+<a href="https://rajveer-research-3s4rjgexs-rajveer-codes-projects.vercel.app/"><img src="https://img.shields.io/badge/🔬_RESEARCH_PROFILE-rajveer--research-ffffff?style=for-the-badge&labelColor=0b2447&color=1d4ed8" alt="Research Profile"/></a>
 
 [![Email](https://img.shields.io/badge/Email-rajveerpall04@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajveerpall04@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rajveer--singh--pall-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajveer-singh-pall)
@@ -89,21 +90,6 @@ A regime-filtered CatBoost/RF/DNN ensemble reaches **73.3% conditional direction
 `CatBoost` `DNN` `Walk-forward Validation` `Market Efficiency` `Ensemble Methods`
 
 **TrustShift: Shift Type, Not Shift Magnitude, Determines ML Failure Modes** · <sub>**Applied Intelligence**</sub> — *see Flagship above.*
-
----
-
-## &#128202;&nbsp; GitHub Analytics
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=Rajveer-code&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&title_color=22d3ee&icon_color=fbbf24&text_color=c9d1d9&bg_color=0d1117" alt="stats"/>
-<img height="165" src="https://streak-stats.demolab.com/?user=Rajveer-code&hide_border=true&background=0d1117&ring=22d3ee&fire=fbbf24&currStreakLabel=22d3ee&sideNums=c9d1d9&currStreakNum=fbbf24&dates=6b6b6b&sideLabels=22d3ee" alt="streak"/>
-
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rajveer-code&layout=compact&hide_border=true&langs_count=8&title_color=22d3ee&text_color=c9d1d9&bg_color=0d1117" alt="top langs"/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=Rajveer-code&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=8" alt="trophies"/>
-
-</div>
 
 ---
 
