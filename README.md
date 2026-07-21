@@ -138,12 +138,6 @@ Languages            Python · R · SQL
 
 <div align="center">
 
-<h4><code>rajveer@github ~ $ ./contributions.sh</code></h4>
-
-<img width="860" src="./contrib-heatmap.svg" alt="self-hosted contribution heatmap — refreshed daily via GitHub Actions"/>
-
-<br/><br/>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake.svg" />
