@@ -1,8 +1,6 @@
 <!-- Rajveer-code/Rajveer-code : profile README. Paste into the special repo named exactly "Rajveer-code". -->
 <meta name="google-site-verification" content="ulma8pVtPkxh6YRWcrvCQVg2ka8wKrE75kA-Pf2MDpU" />
 
-<a href="#"><img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:0b2447,25:1d4ed8,55:0891b2,100:14b8a6&text=Rajveer%20Singh%20Pall&fontColor=ffffff&fontSize=44&fontAlignY=34&desc=Causal%20Inference%20%7C%20Trustworthy%20ML%20%7C%20Deployment-Shift%20Reliability&descSize=16&descAlignY=56&animation=fadeIn" alt="header"/></a>
-
 <div align="center">
 
 **B.Tech Computer Science &amp; Business Systems** · Gyan Ganga Institute of Technology and Sciences, Jabalpur, India
@@ -140,8 +138,6 @@ Languages            Python · R · SQL
 
 <div align="center">
 
-### &#128013;&nbsp; Contribution Graph
-
 <h4><code>rajveer@github ~ $ ./contributions.sh</code></h4>
 
 <img width="860" src="./contrib-heatmap.svg" alt="self-hosted contribution heatmap — refreshed daily via GitHub Actions"/>
@@ -153,9 +149,5 @@ Languages            Python · R · SQL
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake.svg" />
   <img alt="snake animation" src="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
 </picture>
-
-<br/>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:14b8a6,50:0891b2,100:0b2447&section=footer&reversal=true"/>
 
 </div>
