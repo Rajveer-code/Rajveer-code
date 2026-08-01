@@ -6,9 +6,8 @@
 **B.Tech Computer Science &amp; Business Systems** · Gyan Ganga Institute of Technology and Sciences, Jabalpur, India
 *MSc / MS Applicant 2027*
 
-<a href="https://rajveer-code-github-io.vercel.app/"><img src="https://img.shields.io/badge/🌐_PORTFOLIO-rajveer--code.vercel.app-ffffff?style=for-the-badge&labelColor=0b2447&color=14b8a6" alt="Portfolio"/></a>
-<a href="https://rajveer-research-3s4rjgexs-rajveer-codes-projects.vercel.app/"><img src="https://img.shields.io/badge/🔬_RESEARCH_PROFILE-rajveer--research-ffffff?style=for-the-badge&labelColor=0b2447&color=1d4ed8" alt="Research Profile"/></a>
-
+<a href="https://rajveer-code.github.io/"><img src="https://img.shields.io/badge/🌐_PORTFOLIO-rajveer--code.github.io-ffffff?style=for-the-badge&labelColor=0b2447&color=14b8a6" alt="Portfolio"/></a>
+<a href="https://rajveer-research.vercel.app/"><img src="https://img.shields.io/badge/🔬_RESEARCH_PROFILE-rajveer--research-ffffff?style=for-the-badge&labelColor=0b2447&color=1d4ed8" alt="Research Profile"/></a>
 [![Email](https://img.shields.io/badge/Email-rajveerpall04@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajveerpall04@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rajveer--singh--pall-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajveer-singh-pall)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0001--6762--6134-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0001-6762-6134)
@@ -66,11 +65,9 @@ One pre-registered audit protocol applied to **four dissimilar real-world domain
 
 ## &#128220;&nbsp; Publications
 
-### &#9989;&nbsp; Accepted
-
+### &#9989;&nbsp; Published
 **Comprehensive Evaluation of Machine Learning for Type&nbsp;2 Diabetes Risk Prediction: Large-Scale External Validation and Fairness Analysis**
-<sub>Rajveer Singh Pall, Sameer Yadav, Siddharth Bhalerao, Sourabh Sahu, Ritu Ahluwalia, Bhaskar Awadhiya · **IEEE Conference**</sub>
-
+<sub>Rajveer Singh Pall, Sameer Yadav, Siddharth Bhalerao, Sourabh Sahu, Ritu Ahluwalia, Bhaskar Awadhiya · **IEEE Xplore (CIPHER-2026)**</sub>
 XGBoost trained on NHANES 2015–2020 (n&nbsp;=&nbsp;15,685), externally validated on BRFSS 2020–2022 (n&nbsp;=&nbsp;1,285,783). Internal AUC 0.794 degraded to 0.717 under distribution shift; a **13.5 AUC-point gap** between young (0.742) and elderly (0.607) adults means the highest-risk population receives the weakest algorithmic performance.
 
 `XGBoost` `SHAP` `DeLong CI` `Algorithmic Fairness` `External Validation` `TRIPOD-AI`
@@ -79,15 +76,9 @@ XGBoost trained on NHANES 2015–2020 (n&nbsp;=&nbsp;15,685), externally validat
 
 **Persistent Racial Disparities in U.S. Mortgage Approval: Evidence from 42 Million Applications, 2020–2024** · <sub>**Journal of Housing Economics**</sub>
 
-42.3M applications, 5,500 lenders. Black applicants face a raw 14.95 pp approval gap; after DFL reweighting on all observable financials, **98.6% remains unexplained**. Within-lender fixed effects attribute 74.6% of the gap to *within-institution* decisions, rising 66.8%&nbsp;(2020)&nbsp;→&nbsp;78.3%&nbsp;(2024). RDD at the 80% LTV/PMI boundary and a DiD around the 2022 Fed tightening isolate two specific channels.
+42.3M applications, 5,500 lenders. Black applicants face a raw 14.95 pp approval gap; after DFL reweighting on all observable financials, **68% remains unexplained**. Within-lender fixed effects attribute 74.6% of the gap to *within-institution* decisions, rising 66.8%&nbsp;(2020)&nbsp;→&nbsp;78.3%&nbsp;(2024). RDD at the 80% LTV/PMI boundary and a DiD around the 2022 Fed tightening isolate two specific channels.
 
 `Regression Discontinuity` `Difference-in-Differences` `DFL Decomposition` `HMDA` `Fixed Effects`
-
-**The Transaction Cost Trap: Why ML Stock Prediction Fails Economically Under Realistic Frictions** · <sub>**Quantitative Finance and Economics**</sub>
-
-A regime-filtered CatBoost/RF/DNN ensemble reaches **73.3% conditional directional accuracy** in bear regimes yet returns **−42.49% annually** (Sharpe −2.83) after 5 bps costs, versus buy-and-hold's +34.77%. A closed-form breakeven shows profitability needs **88% accuracy** — an explicit case against publication bias in financial ML.
-
-`CatBoost` `DNN` `Walk-forward Validation` `Market Efficiency` `Ensemble Methods`
 
 **TrustShift: Shift Type, Not Shift Magnitude, Determines ML Failure Modes** · <sub>**Applied Intelligence**</sub> — *see Flagship above.*
 
