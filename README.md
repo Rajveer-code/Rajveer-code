@@ -1,124 +1,67 @@
-<!-- Rajveer-code/Rajveer-code : profile README. Paste into the special repo named exactly "Rajveer-code". -->
+<!-- Rajveer-code/Rajveer-code : profile README. Statuses copy D:\grad_school_applications\TRUTH.md (2026-10-19 block). -->
 <meta name="google-site-verification" content="ulma8pVtPkxh6YRWcrvCQVg2ka8wKrE75kA-Pf2MDpU" />
 
 <div align="center">
 
-**B.Tech Computer Science &amp; Business Systems** · Gyan Ganga Institute of Technology and Sciences, Jabalpur, India
-*MSc / MS Applicant 2027*
+**Rajveer Singh Pall** · B.Tech Computer Science &amp; Business Systems, Gyan Ganga Institute of Technology and Sciences, Jabalpur, India
 
-<a href="https://rajveer-code.github.io/"><img src="https://img.shields.io/badge/🌐_PORTFOLIO-rajveer--code.github.io-ffffff?style=for-the-badge&labelColor=0b2447&color=14b8a6" alt="Portfolio"/></a>
-<a href="https://rajveer-research.vercel.app/"><img src="https://img.shields.io/badge/🔬_RESEARCH_PROFILE-rajveer--research-ffffff?style=for-the-badge&labelColor=0b2447&color=1d4ed8" alt="Research Profile"/></a>
-[![Email](https://img.shields.io/badge/Email-rajveerpall04@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajveerpall04@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-rajveer--singh--pall-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajveer-singh-pall)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0001--6762--6134-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0001-6762-6134)
-[![Profile Views](https://komarev.com/ghpvc/?username=Rajveer-code&style=for-the-badge&color=fbbf24&label=PROFILE+VIEWS)](https://github.com/Rajveer-code)
+[Research website](https://rajveer-research.vercel.app/) · [Google Scholar](https://scholar.google.com/citations?user=47CvVCcAAAAJ) · [ORCID 0009-0001-6762-6134](https://orcid.org/0009-0001-6762-6134) · [LinkedIn](https://www.linkedin.com/in/rajveer-singh-pall) · [rajveerpall04@gmail.com](mailto:rajveerpall04@gmail.com)
 
 </div>
 
-<!-- ── animated whoami: ASCII portrait + neofetch card ─────────────── -->
 <div align="center">
-
-<h3><code>rajveer@github ~ $ whoami</code></h3>
-
 <table>
   <tr>
-    <td valign="top"><img src="./avatar-ascii.svg" width="370" alt="ascii self-portrait"/></td>
-    <td valign="top"><img src="./info-card.svg" width="490" alt="neofetch info card"/></td>
+    <td valign="top"><img src="./avatar-ascii.svg" width="370" alt="ASCII self-portrait"/></td>
+    <td valign="top"><img src="./info-card.svg" width="490" alt="Profile summary card"/></td>
   </tr>
 </table>
-
 </div>
 
----
+## Research
 
-## &#128218;&nbsp; Research
+**A headline metric can look fine while the deployed system fails.** I study where that gap opens and how to measure it honestly:
 
-I study two related questions: **when do machine-learning systems fail the people they are meant to serve**, and **what does rigorous causal identification reveal about structural discrimination in financial markets?**
+- **Populations change.** A diabetes model loses 0.077 AUC on an external national survey and serves the oldest adults worst.
+- **Metrics and decisions disagree.** Federated training improves subgroup AUC yet flags fewer Black patients at a fixed screening capacity.
+- **The scorer changes.** Swapping only the answer verifier on an LLM leaderboard reverses 15.9% of pairwise orderings.
+- **The network changes.** Flow-based DoS detectors moved to a new network rank attacks *below* benign traffic.
 
-My published and submitted work spans healthcare ML fairness, racial disparities in mortgage lending, market microstructure, and cross-domain deployment reliability — united by a commitment to **external validity, honest negative results, and methods that hold up under scrutiny.**
+That last result is where my work is heading: **AI security**, where an attacker can exploit the same gap.
 
-<div align="center">
+## Papers
 
-![Trustworthy ML](https://img.shields.io/badge/Trustworthy_ML-14b8a6?style=flat-square&logoColor=white)
-![Causal Inference](https://img.shields.io/badge/Causal_Inference-1d4ed8?style=flat-square)
-![Clinical ML](https://img.shields.io/badge/Clinical_ML-fb7185?style=flat-square)
-![Financial NLP](https://img.shields.io/badge/Financial_NLP-fbbf24?style=flat-square&labelColor=0b2447)
-![Algorithmic Fairness](https://img.shields.io/badge/Algorithmic_Fairness-22d3ee?style=flat-square&labelColor=0b2447)
+**Published**
+- **Comprehensive Evaluation of Machine Learning for Type 2 Diabetes Risk Prediction: Large-Scale External Validation and Fairness Analysis.**
+  R. S. Pall, S. Yadav, S. Bhalerao, S. Sahu, R. Ahluwalia, B. Awadhiya. *IEEE CIPHER-2026* (IEEE Xplore).
+  [DOI](https://doi.org/10.1109/CIPHER70417.2026.11523789) · [arXiv 2607.16253](https://arxiv.org/abs/2607.16253) · [code](https://github.com/Rajveer-code/Federated-Diabetes)
+  NHANES → BRFSS (1.28M respondents): AUC 0.794 → 0.717; adults 60+ reach only 0.607.
 
-</div>
+**Submitted**
+- **Higher AUC, Fewer Cases Flagged: Subgroup Fairness Metrics Can Reverse at the Decision Threshold in Federated Diabetes Screening.** R. S. Pall. Submitted, *ML4H 2026 Findings*. [code](https://github.com/Rajveer-code/Federated-Diabetes)
+  FedAvg narrows the White–Black AUC gap (0.0075 → 0.0005), yet a capacity-limited screening policy flags 542 fewer reference-positive Black respondents per 100,000.
+- **Which Leaderboard Orderings Survive a Human Reader?** R. S. Pall. Submitted, *DMLR*. [code](https://github.com/Rajveer-code/leaderboard-orderings)
+  Changing only the verifier reverses 15.9% of orderings among 3,366 Open LLM Leaderboard models. A 400-item human audit with a stated cross-model assumption certifies 174 of 351 MATH-Hard orderings, each with a breakdown value.
 
----
+**Under review**
+- **Persistent Racial Disparities in U.S. Mortgage Approval: Evidence from 42 Million Applications, 2020–2024.** R. S. Pall. Under review, *Journal of Housing Economics*. [SSRN 6334459](https://ssrn.com/abstract=6334459) · [code](https://github.com/Rajveer-code/hmda-racial-disparities)
 
-## &#127775;&nbsp; Flagship — TrustShift
+**Preprint**
+- **IndiaFinBench: An Evaluation Benchmark for LLM Performance on Indian Financial Regulatory Text.** R. S. Pall. [arXiv 2604.19298](https://arxiv.org/abs/2604.19298) · [dataset](https://huggingface.co/datasets/Rajveer-code/IndiaFinBench) · [code](https://github.com/Rajveer-code/IndiaFinBench)
 
-> **Shift type, not shift magnitude, determines machine-learning failure modes under deployment shift.**
+**In preparation**
+- **Confidently Wrong: Ranking Inversion in Cross-Network Denial-of-Service Detection.** R. S. Pall. 108 of 240 cross-network evaluations score below ROC-AUC 0.5. Code is released with the preprint.
 
-One pre-registered audit protocol applied to **four dissimilar real-world domains** (clinical, mental-health NLP, mortgage lending over 42M records, network intrusion). The finding: the *type* of distribution shift — not its magnitude — predicts *which* axis of trustworthiness (discrimination, calibration, or subgroup reliability) breaks at deployment, and it is diagnosable in advance with cheap, label-free probes.
+## Software and data
 
-[![Paper](https://img.shields.io/badge/Paper-Under_Review_·_Applied_Intelligence-ea580c?style=flat-square&logo=springer&logoColor=white)](https://github.com/Rajveer-code/trustshift)
-[![Code](https://img.shields.io/badge/Code-github.com/Rajveer--code/trustshift-14b8a6?style=flat-square&logo=github&logoColor=white)](https://github.com/Rajveer-code/trustshift)
-[![Benchmark](https://img.shields.io/badge/Benchmark-🤗_Hugging_Face-fbbf24?style=flat-square&logoColor=black)](https://huggingface.co/datasets/Rajveer-code/trustshift)
-
-<img src="https://raw.githubusercontent.com/Rajveer-code/trustshift/main/results/figures/fig1_taxonomy.png" width="100%" alt="TrustShift failure taxonomy"/>
-
----
-
-## &#128220;&nbsp; Publications
-
-### &#9989;&nbsp; Published
-**Comprehensive Evaluation of Machine Learning for Type&nbsp;2 Diabetes Risk Prediction: Large-Scale External Validation and Fairness Analysis**
-<sub>Rajveer Singh Pall, Sameer Yadav, Siddharth Bhalerao, Sourabh Sahu, Ritu Ahluwalia, Bhaskar Awadhiya · **IEEE Xplore (CIPHER-2026)**</sub>
-XGBoost trained on NHANES 2015–2020 (n&nbsp;=&nbsp;15,685), externally validated on BRFSS 2020–2022 (n&nbsp;=&nbsp;1,285,783). Internal AUC 0.794 degraded to 0.717 under distribution shift; a **13.5 AUC-point gap** between young (0.742) and elderly (0.607) adults means the highest-risk population receives the weakest algorithmic performance.
-
-`XGBoost` `SHAP` `DeLong CI` `Algorithmic Fairness` `External Validation` `TRIPOD-AI`
-
-### &#128236;&nbsp; Under Review
-
-**Persistent Racial Disparities in U.S. Mortgage Approval: Evidence from 42 Million Applications, 2020–2024** · <sub>**Journal of Housing Economics**</sub>
-
-42.3M applications, 5,500 lenders. Black applicants face a raw 14.95 pp approval gap; after DFL reweighting on all observable financials, **68% remains unexplained**. Within-lender fixed effects attribute 74.6% of the gap to *within-institution* decisions, rising 66.8%&nbsp;(2020)&nbsp;→&nbsp;78.3%&nbsp;(2024). RDD at the 80% LTV/PMI boundary and a DiD around the 2022 Fed tightening isolate two specific channels.
-
-`Regression Discontinuity` `Difference-in-Differences` `DFL Decomposition` `HMDA` `Fixed Effects`
-
-**TrustShift: Shift Type, Not Shift Magnitude, Determines ML Failure Modes** · <sub>**Applied Intelligence**</sub> — *see Flagship above.*
-
----
-
-## &#129504;&nbsp; Methods &amp; Stack
-
-<div align="center">
-<img src="https://skillicons.dev/icons?i=py,r,pytorch,sklearn,tensorflow,postgres,docker,git,latex,vscode&theme=dark" alt="skills"/>
-</div>
-
-```text
-Causal Inference     Causal Forests · Double ML · RDD · DiD · DFL Decomposition · Manski Bounds
-Fairness             Subgroup AUC · DeLong CI · ECE · Equalised Odds · Disparate Impact
-ML                   XGBoost · LightGBM · CatBoost · PyTorch · scikit-learn · Random Forest
-NLP                  FinBERT · HuggingFace Transformers · RAG · SHAP
-Federated / Privacy  Flower (flwr) · FedAvg · FedProx · FedNova · Opacus (DP)
-Data at Scale        HMDA 42M · BRFSS 1.28M · NHANES · 17,773 stock-days · 14,584 transcripts
-Languages            Python · R · SQL
-```
-
----
-
-## &#128295;&nbsp; Selected Projects
-
-| Project | What it is |
+| | |
 |---|---|
-| [`trustshift`](https://github.com/Rajveer-code/trustshift) | Cross-domain deployment-shift audit protocol + benchmark *(flagship)* |
-| [`CATE-HMDA-Heterogeneous-Effects`](https://github.com/Rajveer-code/CATE-HMDA-Heterogeneous-Effects) | Heterogeneous treatment effects of mortgage discrimination (Causal Forests, DML) |
-| [`Finsight`](https://github.com/Rajveer-code/Finsight) · [`finsight-web`](https://github.com/Rajveer-code/finsight-web) | LLM earnings-call intelligence over 14,584 S&P 500 transcripts · [live demo](https://finsight-web-rust.vercel.app) |
-| [`SereneSpace`](https://github.com/Rajveer-code/SereneSpace) | Anonymous mental-wellness platform |
+| [`fairscope`](https://github.com/Rajveer-code/fairscope) | Subgroup-stratified, calibration-aware fairness auditing for ML models · [PyPI](https://pypi.org/project/fairscope/) |
+| [`leaderboard-orderings`](https://github.com/Rajveer-code/leaderboard-orderings) | Verifier audit, human labels and certification code for LLM leaderboards |
+| [`trustshift`](https://github.com/Rajveer-code/trustshift) | Four-domain deployment-shift audit: prediction files, result tables, one script per table · [HF dataset](https://huggingface.co/datasets/Rajveer-code/trustshift) |
+| [lm-evaluation-harness #4007](https://github.com/EleutherAI/lm-evaluation-harness/issues/4007) | Upstream census: 2,936 of 4,524 generative tasks score an unparseable response as a wrong answer |
+| [`sih-2026-bordershield`](https://github.com/Rajveer-code/sih-2026-bordershield) | Smart India Hackathon 2026 team entry: document and identity screening console |
 
----
+## Service
 
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake.svg" />
-  <img alt="snake animation" src="https://raw.githubusercontent.com/Rajveer-code/Rajveer-code/output/github-snake-dark.svg" />
-</picture>
-
-</div>
+Program Committee reviewer: W-NUT 2026 and FinNLP 2026 (EMNLP 2026 workshops).
